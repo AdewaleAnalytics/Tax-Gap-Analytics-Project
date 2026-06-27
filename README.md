@@ -62,6 +62,7 @@ Total Tax Gap (Billions) = DIVIDE(SUM('fact_tax_gaps'[Tax_Gap_Billion]), 1000, 0
 ### Prior Year Tax Gap
 Dynamically extracts the active calendar year context, overrides the current visual filter using safe casting, and looks back exactly one fiscal period to capture the precise comparative baseline:
 
+```dax
 Code snippet
 Prior Year Tax Gap = 
 VAR SelectedYear = COALESCE(SELECTEDVALUE('dim_financial_calendar'[Calendar_Year_Start]), 2023)
@@ -71,10 +72,12 @@ RETURN
         REMOVEFILTERS('dim_financial_calendar'),
         VALUE('dim_financial_calendar'[Calendar_Year_Start]) = VALUE(SelectedYear) - 1
     )
+```
 
 ### YoY Tax Gap Change (%)
 Computes the strict algebraic difference between isolated fiscal years, completely bypassing external cross-filtering distortion to deliver accurate rate metrics:
 
+```dax
 Code snippet
 YoY Tax Gap Change (%) = 
 VAR SelectedYear = COALESCE(SELECTEDVALUE('dim_financial_calendar'[Calendar_Year_Start]), 2023)
@@ -82,13 +85,14 @@ VAR CurrentYearGap = CALCULATE([Total Tax Gap (Billions)], REMOVEFILTERS('dim_fi
 VAR PriorYearGap = [Prior Year Tax Gap]
 RETURN
     DIVIDE(CurrentYearGap - PriorYearGap, PriorYearGap, 0)
-    
+  ```  
 ### 💻 Dynamic Visual Assets (SVG UI Integration)
 To deliver a premium consumer-grade user experience, visual trend indicators are rendered programmatically based on active performance outcomes using a custom vector-injection script:
 
 ### YoY Tax Gap Icon URL
 Evaluates the directional trajectory of the gap metric. If uncollected revenue expands (positive variance), it injects a high-visibility hazard red vector asset; if the gap contracts (negative variance), it switches instantly to a stabilization green asset:
 
+```dax
 Code snippet
 YoY Tax Gap Icon URL = 
 IF(
@@ -96,6 +100,7 @@ IF(
     "data:image/svg+xml;utf8,<svg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 24 24' fill='none' stroke='%23D62828' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'></polyline><polyline points='17 6 23 6 23 12'></polyline></svg>",
     "data:image/svg+xml;utf8,<svg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 24 24' fill='none' stroke='%232A9D8F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 18 13.5 8.5 8.5 13.5 1 6'></polyline><polyline points='17 18 23 18 23 12'></polyline></svg>"
 )
+```
 
 ## 📊 Business Intelligence & Executive Outcomes
 The analytical backend feeds an enterprise-ready dashboard that empowers financial policy and risk management teams to drive strategic interventions based on explicit data:
