@@ -77,7 +77,8 @@ VAR SelectedYear = COALESCE(SELECTEDVALUE('dim_financial_calendar'[Calendar_Year
 VAR CurrentYearGap = CALCULATE([Total Tax Gap (Billions)], REMOVEFILTERS('dim_financial_calendar'), VALUE('dim_financial_calendar'[Calendar_Year_Start]) = VALUE(SelectedYear))
 VAR PriorYearGap = [Prior Year Tax Gap]
 RETURN
-    DIVIDE(CurrentYearGap - PriorYearGap, PriorYearGap, 0)
+ DIVIDE(CurrentYearGap - PriorYearGap, PriorYearGap, 0)
+
 💻 Dynamic Visual Assets (SVG UI Integration)
 To deliver a premium consumer-grade user experience, visual trend indicators are rendered programmatically based on active performance outcomes using a custom vector-injection script:
 
