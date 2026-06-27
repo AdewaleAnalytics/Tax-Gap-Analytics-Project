@@ -56,7 +56,6 @@ The project model relies on a highly synchronized suite of custom business logic
 Aggregates raw transactional reporting parameters and standardizes the scaling factor, converting baseline figures into clean, readable billions formatting:
 ```dax
 Total Tax Gap (Billions) = DIVIDE(SUM('fact_tax_gaps'[Tax_Gap_Billion]), 1000, 0)
-
 Prior Year Tax Gap
 Dynamically extracts the active calendar year context, overrides the current visual filter using safe casting, and looks back exactly one fiscal period to capture the precise comparative baseline:
 
