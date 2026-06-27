@@ -2,9 +2,9 @@
 
 A comprehensive, end-to-end data analytics and business intelligence solution engineered to monitor, calculate, and profile the structural tax gap across multiple fiscal publication cycles. This project processes multi-year dimensional data to isolate macro performance trends, track percentage variations across core tax streams, and deliver dynamic, executive-ready performance visual metrics.
 
-![Executive Compliance Dashboard](Images/exe.JPG)
-![Risk Stream Analysis & Variance](images/risk.JPG)
-![Time-Series & Forecasting Matrix](images/trend.JPG)
+![Executive Compliance Dashboard](Images/Exe.jpg)
+![Risk Stream Analysis & Variance](images/risk.jpg)
+![Time-Series & Forecasting Matrix](images/trend.jpg)
 
 ***
 
