@@ -55,7 +55,6 @@ The project model relies on a highly synchronized suite of custom business logic
 ### Total Tax Gap (Billions)
 Aggregates raw transactional reporting parameters and standardizes the scaling factor, converting baseline figures into clean, readable billions formatting:
 
-```dax
 Total Tax Gap (Billions) = DIVIDE(SUM('fact_tax_gaps'[Tax_Gap_Billion]), 1000, 0)
 
 Prior Year Tax Gap
