@@ -57,7 +57,7 @@ Aggregates raw transactional reporting parameters and standardizes the scaling f
 
 Total Tax Gap (Billions) = DIVIDE(SUM('fact_tax_gaps'[Tax_Gap_Billion]), 1000, 0)
 
-Prior Year Tax Gap
+### Prior Year Tax Gap
 Dynamically extracts the active calendar year context, overrides the current visual filter using safe casting, and looks back exactly one fiscal period to capture the precise comparative baseline:
 
 Code snippet
@@ -69,7 +69,8 @@ RETURN
         REMOVEFILTERS('dim_financial_calendar'),
         VALUE('dim_financial_calendar'[Calendar_Year_Start]) = VALUE(SelectedYear) - 1
     )
-YoY Tax Gap Change (%)
+
+### YoY Tax Gap Change (%)
 Computes the strict algebraic difference between isolated fiscal years, completely bypassing external cross-filtering distortion to deliver accurate rate metrics:
 
 Code snippet
@@ -79,10 +80,11 @@ VAR CurrentYearGap = CALCULATE([Total Tax Gap (Billions)], REMOVEFILTERS('dim_fi
 VAR PriorYearGap = [Prior Year Tax Gap]
 RETURN
     DIVIDE(CurrentYearGap - PriorYearGap, PriorYearGap, 0)
-💻 Dynamic Visual Assets (SVG UI Integration)
+    
+### 💻 Dynamic Visual Assets (SVG UI Integration)
 To deliver a premium consumer-grade user experience, visual trend indicators are rendered programmatically based on active performance outcomes using a custom vector-injection script:
 
-YoY Tax Gap Icon URL
+### YoY Tax Gap Icon URL
 Evaluates the directional trajectory of the gap metric. If uncollected revenue expands (positive variance), it injects a high-visibility hazard red vector asset; if the gap contracts (negative variance), it switches instantly to a stabilization green asset:
 
 Code snippet
@@ -92,18 +94,19 @@ IF(
     "data:image/svg+xml;utf8,<svg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 24 24' fill='none' stroke='%23D62828' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'></polyline><polyline points='17 6 23 6 23 12'></polyline></svg>",
     "data:image/svg+xml;utf8,<svg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 24 24' fill='none' stroke='%232A9D8F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 18 13.5 8.5 8.5 13.5 1 6'></polyline><polyline points='17 18 23 18 23 12'></polyline></svg>"
 )
-📊 Business Intelligence & Executive Outcomes
+
+## 📊 Business Intelligence & Executive Outcomes
 The analytical backend feeds an enterprise-ready dashboard that empowers financial policy and risk management teams to drive strategic interventions based on explicit data:
 
-Executive Performance Profile: Houses synchronized metric rows tracking overall shortfalls, absolute deltas, and percentage variances with native callout text formatting.
+* **Executive Performance Profile:** Houses synchronized metric rows tracking overall shortfalls, absolute deltas, and percentage variances with native callout text formatting.
 
-Core Stream Structural Analysis: Employs advanced comparative matrices that cross-examine individual tax streams (such as VAT sectors or Corporate structures) over multiple years, detailing specific growth rates.
+* **Core Stream Structural Analysis:** Employs advanced comparative matrices that cross-examine individual tax streams (such as VAT sectors or Corporate structures) over multiple years, detailing specific growth rates.
 
-Targeted Key Insights: Surfaces high-impact narrative observations automatically:
+* **Targeted Key Insights:** Surfaces high-impact narrative observations automatically:
 
-Key Insight: The total tax gap across selected streams expanded by +20.7% (£6.3B) from 2022 to 2025, driven heavily by a combined £2.8B surge in VAT – Retail & Wholesale and Corporation Tax – Large Businesses.
+* **Key Insight:** The total tax gap across selected streams expanded by +20.7% (£6.3B) from 2022 to 2025, driven heavily by a combined £2.8B surge in VAT – Retail & Wholesale and Corporation Tax – Large Businesses.
 
-⚖️ Licensing & Data Attribution
+## ⚖️ Licensing & Data Attribution
 Data Source: This project utilizes official public sector estimation datasets published by His Majesty's Revenue and Customs (HMRC), licensed under the Open Government Licence v3.0.
 
 Endorsement Disclaimer: This repository serves entirely as an independent data analysis portfolio project. It is not endorsed, approved, sponsored, or affiliated with HMRC, the government, or any public sector authority.
