@@ -107,8 +107,8 @@ The analytical backend feeds an enterprise-ready dashboard that empowers financi
 * **Key Insight:** The total tax gap across selected streams expanded by +20.7% (£6.3B) from 2022 to 2025, driven heavily by a combined £2.8B surge in VAT – Retail & Wholesale and Corporation Tax – Large Businesses.
 
 ## ⚖️ Licensing & Data Attribution
-Data Source: This project utilizes official public sector estimation datasets published by His Majesty's Revenue and Customs (HMRC), licensed under the Open Government Licence v3.0.
+* **Data Source:** This project utilizes official public sector estimation datasets published by His Majesty's Revenue and Customs (HMRC), licensed under the Open Government Licence v3.0.
 
-Endorsement Disclaimer: This repository serves entirely as an independent data analysis portfolio project. It is not endorsed, approved, sponsored, or affiliated with HMRC, the government, or any public sector authority.
+* **Endorsement Disclaimer:** This repository serves entirely as an independent data analysis portfolio project. It is not endorsed, approved, sponsored, or affiliated with HMRC, the government, or any public sector authority.
 
-Third-Party Material Notice: All operational database structures, analytical metrics, visual layouts, and vector assets are custom configurations engineered uniquely for this portfolio analysis. Care has been taken to ensure no restricted or excluded third-party copyright materials are included in the asset model.
+* **Third-Party Material Notice:** All operational database structures, analytical metrics, visual layouts, and vector assets are custom configurations engineered uniquely for this portfolio analysis. Care has been taken to ensure no restricted or excluded third-party copyright materials are included in the asset model.
